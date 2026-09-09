@@ -5,6 +5,8 @@ description: Continue customizing this Neovim config (forked from kickstart.nvim
 
 # Neovim config customization (this repo)
 
+Assumes the environment is already set up (tools installed, repo placed at `~/.config/nvim`) — that's the root `CLAUDE.md`'s job, run it first if this is a fresh clone.
+
 This repo is a fork of [kickstart.nvim](https://github.com/nvim-lua/kickstart.nvim) using Neovim's native plugin manager (`vim.pack`, requires Neovim 0.12+) — not lazy.nvim. Everything lives in one `init.lua`, split into numbered `-- SECTION N` comment blocks, plus an extension point at `lua/custom/plugins/`. **Do not restructure this.** Add customization inside the existing sections (LSP servers table, `formatters_by_ft`, treesitter `parsers` list) or as a new file under `lua/custom/plugins/`, required from Section 10. Never introduce lazy.nvim, packer, or any other plugin manager — `vim.pack.add { gh 'owner/repo' }` is the only mechanism (the `gh()` helper is defined near the top of `init.lua` at the module scope; duplicate it locally in any new `lua/custom/plugins/*.lua` file since those are separate modules).
 
 ## Baseline already in this repo
