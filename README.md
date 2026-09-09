@@ -1,3 +1,11 @@
+# friend-nvim-starter
+
+Fork of [kickstart.nvim](https://github.com/nvim-lua/kickstart.nvim) with a baseline already wired in: LSP + formatting for TypeScript/JavaScript/React, Python, and C/C++, plus tokyonight (active), catppuccin, rose-pine and the `cerne`/`cerne-light` colorschemes installed.
+
+Opening this repo in Claude Code loads a `nvim-config` skill (`.claude/skills/nvim-config/SKILL.md`) for continuing the customization — AI coding agent, autocomplete, more languages, active colorscheme, anything else — based on your own daily stack. Run `/nvim-config` or just ask Claude to keep setting up your Neovim config.
+
+---
+
 # kickstart.nvim
 
 ## Introduction
