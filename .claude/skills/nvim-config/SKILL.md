@@ -15,7 +15,7 @@ This repo is a fork of [kickstart.nvim](https://github.com/nvim-lua/kickstart.nv
 - **Formatting** (Section 7, conform.nvim `formatters_by_ft`): `prettierd`/`prettier` for JS/TS/JSX/TSX, `ruff_format` for Python, `clang_format` for C/C++.
 - **Treesitter** (Section 9, `parsers` list): bash, c, cpp, javascript, typescript, tsx, python, lua, markdown, + kickstart defaults. Note: any other filetype auto-installs its parser on first open anyway (see the `FileType` autocmd in that section) — the list is just for pre-warming common ones.
 - **Autocomplete**: `blink.cmp` (Section 8) — this is kickstart's own current default, not nvim-cmp. Keep it unless the user explicitly wants nvim-cmp instead (that would mean removing blink.cmp's `vim.pack.add`/`setup` in Section 8 and adding `hrsh7th/nvim-cmp` + sources in a new `lua/custom/plugins/cmp.lua` — a real swap, confirm before doing it).
-- **Colorschemes**: `tokyonight-night` active by default (Section 2, kickstart's own choice — left as-is on purpose). Also installed but inactive, via `lua/custom/plugins/colorscheme.lua`: `catppuccin` (mocha flavour configured), `rose-pine`. Also bundled as plain `colors/*.lua` files (no plugin needed, just `:colorscheme <name>`): `cerne` (dark) and `cerne-light` — the user's own brand colorscheme.
+- **Colorschemes**: `tokyonight-night` active by default (Section 2, kickstart's own choice — left as-is on purpose). Also installed but inactive, via `lua/custom/plugins/colorscheme.lua`: `catppuccin` (mocha flavour configured), `rose-pine`, and `cerne`/`cerne-light` (from [Cerne17/cerne.nvim](https://github.com/Cerne17/cerne.nvim), the user's own published brand colorscheme).
 - **Which-key, Telescope**: fully wired in kickstart's own sections, untouched. New keymaps you add for new plugins should register under the existing which-key spec (Section: look for `require('which-key').setup` / the `spec` table), not a separate keymap system.
 - **AI coding agent**: not set up yet — this is the main open item, see interview below.
 
@@ -54,7 +54,7 @@ Then require it explicitly from Section 10 of `init.lua` (next to the existing `
 
 ## Switching the active colorscheme
 
-Edit the `vim.cmd.colorscheme '...'` line in Section 2 of `init.lua` (currently `'tokyonight-night'`). For `cerne`/`cerne-light`, no plugin is needed — they're plain files in `colors/`, just changing that line to `'cerne'` or `'cerne-light'` works. `:Telescope colorscheme` previews any of them live before committing to one.
+Edit the `vim.cmd.colorscheme '...'` line in Section 2 of `init.lua` (currently `'tokyonight-night'`) — changing it to `'cerne'` or `'cerne-light'` works once `lua/custom/plugins/colorscheme.lua` has installed `Cerne17/cerne.nvim` (it already does). `:Telescope colorscheme` previews any of them live before committing to one.
 
 ## Verify after changes
 
